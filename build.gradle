@@ -1,0 +1,53 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+plugins {
+    id 'java-library'
+    id 'application'
+    id 'io.qameta.allure' version '2.8.1'
+}
+
+repositories {
+    jcenter()
+}
+
+ext {
+    selenideVersion = "5.20.1"
+    allureVersion = "2.13.9"
+    junitVersion = "5.7.0"
+}
+
+allure {
+    version = "${allureVersion}"
+    autoconfigure = true
+    aspectjweaver = true
+    useJUnit5 {
+        version = "${allureVersion}"
+    }
+}
+
+dependencies {
+    testImplementation (
+            "org.aspectj:aspectjweaver:1.9.6",
+            "com.codeborne:selenide:${selenideVersion}",
+            "io.qameta.allure:allure-selenide:${allureVersion}",
+            "ch.qos.logback:logback-classic:1.2.3",
+            "com.github.javafaker:javafaker:1.0.2",
+            "org.aeonbits.owner:owner:1.0.12",
+            "io.qameta.allure:allure-ee-junit-platform:3.28.2",
+            "org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+    systemProperties = System.properties
+
+}
