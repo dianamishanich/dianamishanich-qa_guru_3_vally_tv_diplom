@@ -12,6 +12,7 @@ plugins {
 
 repositories {
     jcenter()
+    maven { url = 'https://dl.bintray.com/qameta/maven-unstable' }
 }
 
 ext {
@@ -49,5 +50,5 @@ tasks.withType(JavaCompile) {
 test {
     useJUnitPlatform()
     systemProperties = System.properties
-
+    systemProperty ('junit.jupiter.extensions.autodetection.enabled', 'true')
 }
