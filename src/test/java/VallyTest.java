@@ -19,11 +19,13 @@ import static helpers.AttachmentsHelper.*;
 public class VallyTest {
     //static GeraldFitzGerald config = ConfigFactory.newInstance().create(GeraldFitzGerald.class);
 
-    static  String userLogin = "aaa@aaa.aa",
+    static String REMOTE_BROWSER_URL = "https://user1:1234@selenoid.autotests.cloud:4444/wd/hub/";
+
+    static String userLogin = "aaa@aaa.aa",
             userPassword = "aaaaaa",
-            //userLogin = config.userLogin(),
-            //userPassword = config.userPassword(),
-            interfaceLanguage = "Español";
+    //userLogin = config.userLogin(),
+    //userPassword = config.userPassword(),
+    interfaceLanguage = "Español";
 
     @BeforeAll
     static void setup() {
@@ -39,7 +41,8 @@ public class VallyTest {
 
     }
 
-    static void logIn() {
+    @BeforeEach
+    void logIn() {
         open("https://vally.tv/");
         $(".sign-in").click();
         $("input[name='email']").val(userLogin);
