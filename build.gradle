@@ -50,5 +50,6 @@ tasks.withType(JavaCompile) {
 test {
     useJUnitPlatform()
     systemProperties = System.properties
+    systemProperty("cookies", "__gads=ID=8908e6fa9ca16138-22c337160bbb0053:T=1617828974:S=ALNI_MZnKwvU32tghK7kuQkyU1kIAZ-Xqg; __cfduid=de8d0e609a95f8778c6434c172b8efe821618248977; _ym_uid=16034006531043867681; _ym_d=1618248979; _ga=GA1.2.1370706966.1618248979; __adroll_fpc=ba0a40b5440b3d939c8975a613509f60-1618248980525; _fbp=fb.1.1618248981287.1558764101; _gid=GA1.2.347543997.1619886333; _ym_isad=2; _ym_visorc=w; __ar_v4=MBQUC56QENGMPFWZQQOLOR%3A20210412%3A49%7C2ARQWK75DJEANNFX3KAPM3%3A20210412%3A49")
     systemProperty ('junit.jupiter.extensions.autodetection.enabled', 'true')
 }
