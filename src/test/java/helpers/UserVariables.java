@@ -1,3 +1,5 @@
+package helpers;
+
 import org.aeonbits.owner.Config;
 
     @Config.LoadPolicy(Config.LoadType.MERGE)
@@ -5,7 +7,7 @@ import org.aeonbits.owner.Config;
             "file:../secret1.properties",
     })
 
-    public interface GeraldFitzGerald extends Config {
+    public interface UserVariables extends Config {
 
         @Key("user.login")
         String userLogin();

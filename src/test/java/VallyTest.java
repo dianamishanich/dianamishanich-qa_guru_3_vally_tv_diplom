@@ -1,4 +1,5 @@
 import com.codeborne.selenide.Configuration;
+import helpers.UserVariables;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,7 +12,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class VallyTest {
-    GeraldFitzGerald config = ConfigFactory.newInstance().create(GeraldFitzGerald.class);
+    UserVariables config = ConfigFactory.newInstance().create(UserVariables.class);
 
     @BeforeAll
     static void setup() {
@@ -91,7 +92,7 @@ public class VallyTest {
     @Test
     @DisplayName("Клик по фильмам в Карусели")
     public void carouselUsingTest() {
-        $("div.promo-preview:nth-child(3)").click();
+        $("div.promo-preview:nth-child(4)").click();
         $("[href='/video/c25b92dc-c6fa-4e33-82a2-104189723697']").click();
         $("#vally_player_iframe").click();
         WebElement frame = $("#vally_player_iframe");
