@@ -92,7 +92,7 @@ public class VallyTest {
     @Test
     @DisplayName("Клик по фильмам в Карусели")
     public void carouselUsingTest() {
-        $("div.promo-preview:nth-child(4)").click();
+        $("div.promo-preview:nth-child(12)").click();
         $("[href='/video/c25b92dc-c6fa-4e33-82a2-104189723697']").click();
         $("#vally_player_iframe").click();
         WebElement frame = $("#vally_player_iframe");

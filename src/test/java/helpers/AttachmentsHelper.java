@@ -5,10 +5,12 @@ import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
+
 import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
+
 
 public class AttachmentsHelper {
 
@@ -27,6 +29,7 @@ public class AttachmentsHelper {
         return getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8);
     }
 
+
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String attachVideo() {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
@@ -35,7 +38,7 @@ public class AttachmentsHelper {
     }
 
     public static String getVideoUrl() {
-        return "https://" + System.getProperty("remote.browser.url") + "/video/" + getSessionId() + ".mp4";
+        return System.getProperty("remote.browser.url") + "/video/" + getSessionId() + ".mp4";
     }
 
     public static String getSessionId(){
@@ -44,8 +47,6 @@ public class AttachmentsHelper {
 
     public static String getConsoleLogs() {
         return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
-
     }
 
 }
-
