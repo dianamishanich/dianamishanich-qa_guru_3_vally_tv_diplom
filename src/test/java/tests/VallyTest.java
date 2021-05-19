@@ -34,7 +34,7 @@ public class VallyTest {
 
     @BeforeEach
     public void init() {
-        open("https://dev.vally.tv/");
+        open("https://vally.tv/");
     }
 
     @Test
