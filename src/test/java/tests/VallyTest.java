@@ -1,3 +1,5 @@
+package tests;
+
 import com.codeborne.selenide.Configuration;
 import helpers.UserVariables;
 import org.aeonbits.owner.ConfigFactory;
